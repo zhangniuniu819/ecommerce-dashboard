@@ -10,8 +10,7 @@ plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 加载数据（假设文件名为 ecommerce_data.csv）
-file_path=r'C:\Users\张宇煊\Downloads\ecommerce_data.csv'
-df = pd.read_csv(file_path)
+df = pd.read_csv('ecommerce_data.csv')
 print("数据形状:", df.shape)
 print("\n前5行数据:")
 print(df.head())
