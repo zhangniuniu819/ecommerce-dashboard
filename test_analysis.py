@@ -9,7 +9,7 @@ warnings.filterwarnings('ignore')
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
-# 加载数据（假设文件名为 ecommerce_data.csv）
+# 加载数据
 df = pd.read_csv('ecommerce_data.csv')
 print("数据形状:", df.shape)
 print("\n前5行数据:")
@@ -128,17 +128,17 @@ plt.tight_layout()
 plt.show()
 
 # 清洗数据
-df = pd.read_csv(r'C:\Users\张宇煊\Downloads\ecommerce_data.csv')
+df = pd.read_csv('ecommerce_data.csv')
 df['购买时间'] = pd.to_datetime(df['购买时间'])
 # 画静态图
 plt.bar(df['商品类别'], df['消费金额'])
 plt.show()
 import streamlit as st
 # 清洗数据（逻辑一模一样，只是放在网页里跑）
-df = pd.read_csv(r'C:\Users\张宇煊\Downloads\ecommerce_data.csv')
+df = pd.read_csv('ecommerce_data.csv')
 df['购买时间'] = pd.to_datetime(df['购买时间'])
 
-# 在网页上生成一个下拉菜单，让老板自己选想看哪个类别
+# 在网页上生成一个下拉菜单，自己选想看哪个类别
 category = st.selectbox('选择商品类别', df['商品类别'].unique())
 # 根据选择动态出图
 filtered = df[df['商品类别'] == category]
